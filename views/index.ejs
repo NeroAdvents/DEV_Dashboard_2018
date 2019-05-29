@@ -1,0 +1,196 @@
+<!-- views/index.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>Dashboard - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+        .nav-item {
+            margin-left: 30px;
+        }
+
+        .navbar-icon-top .navbar-nav .nav-link > .fas {
+            position: relative;
+            width: 36px;
+            font-size: 24px;
+        }
+
+        .navbar-icon-top .navbar-nav .nav-link > .fas {
+            top: 3px;
+            line-height: 12px;
+        }
+
+        @media (min-width: 576px) {
+            .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link {
+                text-align: center;
+                display: table-cell;
+                height: 70px;
+                vertical-align: middle;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link > .fas {
+                display: block;
+                width: 48px;
+                margin: 2px auto 4px auto;
+                top: 0;
+                line-height: 24px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link {
+                text-align: center;
+                display: table-cell;
+                height: 70px;
+                vertical-align: middle;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .navbar-icon-top.navbar-expand-md .navbar-nav .nav-link > .fas {
+                display: block;
+                width: 48px;
+                margin: 2px auto 4px auto;
+                top: 0;
+                line-height: 24px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link {
+                text-align: center;
+                display: table-cell;
+                height: 70px;
+                vertical-align: middle;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .navbar-icon-top.navbar-expand-lg .navbar-nav .nav-link > .fas {
+                display: block;
+                width: 48px;
+                margin: 2px auto 4px auto;
+                top: 0;
+                line-height: 24px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link {
+                text-align: center;
+                display: table-cell;
+                height: 70px;
+                vertical-align: middle;
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fas {
+                display: block;
+                width: 48px;
+                margin: 2px auto 4px auto;
+                top: 0;
+                line-height: 24px;
+            }
+        }
+        body {
+            background: url("img/background.jpg") no-repeat center fixed;
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .nav-link {
+            color: white;
+        }
+        @font-face {
+            font-family: myFont;
+            src: url("font/calli6.ttf");
+        }
+        @font-face {
+            font-family: myFontv2;
+            src: url("font/calli7.ttf");
+        }
+        .btn-container {
+            display: inline-block;
+            padding: 16px 0px;
+            margin: 0px 16px;
+            overflow: hidden;
+        }
+        *, *:before, *:after {
+            padding: 0px;
+            margin: 0px;
+            transition: 0.3s;
+        }
+        .btn-light {
+            color: white;
+            border: solid 3px white;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+            padding: 15px 30px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            background: transparent;
+        }
+        .btn-light:before {
+            display: block;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 0px;
+            height: 100%;
+            z-index: -1;
+            content: "";
+            background: orange;
+        }
+
+        .btn-light:hover {
+            color: white;
+            border: solid 3px orange;
+        }
+        .btn-light:hover:before {
+            width: 100%;
+        }
+
+        .nav-link:hover{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-icon-top navbar-expand-lg">
+    <div class="container">
+    <a class="navbar-brand" href="/"><img src="img/logo3.png" width="200" height="50"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><span class="fas fa-home"></span> Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/login"><span class="fas fa-user""></span> Login </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signup"><span class="fas fa-sign-in-alt"></span> Sign Up</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<div class="container text-center" style="margin-top: 100px; color: white;">
+        <h1 class="display-4" style="font-family: myFont; font-size: 200px">Welcome></h1>
+    <p class="lead" style="font-family: myFontv2; font-size: 40px; margin-top: 20px; color: orange">Register to our Dashboard.</p>
+    <p class="lead" style="font-size: 25px; margin-top: 30px; margin-bottom: 30px">you will have access to several <br>services offered by our application.</p>
+    <div class="btn-container"><a class="btn btn-light" href="/signup" style="font-family: myFontv2">Let's start</a></div>
+</div>
+</body>
+</html>
